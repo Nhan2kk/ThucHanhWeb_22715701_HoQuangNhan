@@ -1,0 +1,20 @@
+*{
+    box-sizing: border-box;
+    margin: 1px auto;
+}
+#tong{
+    width: 700px;
+    border: 2px solid rgb(198, 196, 196);
+    background-color: rgb(140, 200, 243);
+}
+#td{
+    vertical-align:text-top;
+}
+table{
+    width: 600px;
+   
+  
+}
+h2,#div1{
+    text-align: center;
+}

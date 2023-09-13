@@ -1,0 +1,10 @@
+*{
+    box-sizing: border-box;
+    margin: 5px auto;
+}
+#tong{
+    width: 1100px;
+    border: 2px solid grey;
+    height: 400px;
+    padding: 10px;
+}

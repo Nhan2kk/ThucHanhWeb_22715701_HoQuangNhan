@@ -1,0 +1,15 @@
+*{
+    box-sizing: border-box;
+    margin: 5px auto;
+}
+#tong{
+    width: 1100px;
+    border: 2px solid grey;
+    padding: 10px;
+}
+table{
+    margin-left: 0px;
+}
+td{
+    padding-right: 10px;
+}
