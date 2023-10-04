@@ -1,0 +1,107 @@
+.container{
+    border: 1px solid black;
+}
+.col-sm-5>img{
+    height: 100px;
+}
+.col-sm-5>h1{
+    color: white;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    margin-top: 9px;
+}
+#p1{
+    color: white;
+    margin-top: -10px;
+}
+#divheader{
+    margin-left: 374px;
+}
+#divheader>input{
+    background-color: rgb(21, 43, 61);
+    color: white;
+    font-size: 14px;
+    padding-bottom: 3px;
+    border: 2px solid rgb(57, 129, 193);
+}
+.navbar-brand{
+   margin-left: -120px;
+   margin-bottom: -93px;
+}
+.navbar-brand>a{
+    background-color: rgb(52, 124, 186);
+    padding: 15px;
+    padding-left: 22px;
+    padding-right: 22px;
+    color: white;
+    font-size: 16px;
+    margin-left: 15px;
+    font-weight: bold;
+    text-decoration: none;
+}
+#p2{
+    font-size: 25px;
+    font-family:'Times New Roman', Times, serif;
+    color: grey;
+    margin-top: 30px;
+    border-bottom: 1px dashed grey;
+    padding-bottom: 15px;
+}
+#p3{
+    font-style: italic;
+    color: red;
+    text-align: justify;
+    text-shadow: 4px 4px 4px rgb(45, 152, 15);
+}
+.col-sm-6>div>label{
+    color: grey;
+    margin-bottom: -5px;
+}
+.col-12>form>button{
+    color: grey;
+    border:1px solid rgb(222, 217, 217) ;
+}
+#p4{
+    color: grey;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    border-bottom: 1px dashed grey;
+    margin-top: -8px;
+    padding-bottom: 8px;
+}
+#col-sm-5section{
+    padding-left: 40px;
+    color: grey;
+}
+.col-sm-4{
+    padding-top: 50px;
+}
+.col-sm-4>div{
+    background-color: #E6E6FA;
+    padding: 20px 30px 20px 30px;
+}
+#p5{
+    color: grey;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    border-bottom: 1px dashed grey;
+    padding-bottom: 15px;
+}
+#p6{
+    color: grey;
+    padding-top: 10px;
+    text-align: justify;
+}.footer{
+    background-color: #112a41;
+    width: 1139px;
+    height: 50px;
+    margin-top: 50px;
+    padding-top: 12px;
+    margin-left: -15px;
+    padding-left: 10px;
+}
+#p7{
+    margin-left: 300px;
+    position: relative;
+    top: -39px;
+    color:#3470a8;
+}

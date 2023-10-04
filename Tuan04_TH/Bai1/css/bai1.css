@@ -1,0 +1,64 @@
+.container{
+    background:linear-gradient( rgb(114, 197, 249) 40%, rgb(108, 159, 227) 70%);
+    height: 700px;
+}
+.navbar-brand{
+    margin-left: -35px;
+    height: 27px;
+}
+a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-right: 50px;
+    
+}
+nav>h1{
+    color: white;
+    text-shadow: 2px 2px 4px black,
+                 3px 3px 6px blue,
+                 3px 3px 7px blue;
+}
+form{
+   padding-left: 50px;
+}
+input,button,textarea{
+    border-radius: 10px 10px 10px 10px;
+    border: 1px solid grey;
+}
+lable{
+    color: white;
+}
+textarea{
+    margin-left: 7px;
+}
+img{
+    margin-top: 45px;
+    height: 350px;
+    width: 500px;
+}
+#col-sm-6{
+    
+    font-family:'Times New Roman', Times, serif;
+    color: blue;
+}
+#col-sm-6>h1{
+    padding-top: 30px;
+    padding-left: 45px;
+    font-weight: bold;
+   text-shadow: 4px 3px 0px ;
+}
+#col-sm-6>h3{
+    padding-left: 60px;
+    font-weight: bold;
+}
+#lable{
+    color: white;
+    position: relative;
+    top: -35px;
+}
+.col-12>p{
+    color: white;
+    text-align: center;
+}

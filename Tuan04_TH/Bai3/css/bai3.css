@@ -1,0 +1,146 @@
+.container{
+    border: 1px solid black;
+}
+.col-12>p{
+    color: rgb(129, 123, 11);
+    text-shadow: -6px -3px 5px white;
+    font-weight: bold;
+    font-size: 50px;
+    padding-top: 10px;
+    padding-left: 10px;
+    font-family: Times New Roman;
+    height: 80px;
+}
+.navbar-brand{
+    margin-left: -40px;
+}
+.navbar-brand>a{
+    color: rgb(188, 74, 25);
+    text-decoration: none;
+    margin-right: 60px;
+    position: relative;
+    font-size: 15px;
+    top: -12px;
+}
+#p1{
+    color: rgb(166, 158, 4);
+    letter-spacing: 3px;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 30px;
+    font-family:'Times New Roman', Times, serif;
+}#p2{
+    color: rgb(166, 158, 4);
+    font-weight: bold;
+    font-size: 14px;
+    font-style: italic;
+    margin-bottom: 50px;
+    word-spacing: 3px;
+
+}
+.col-8>div{
+    padding:5px 30px 30px 40px;
+}
+.form-group>input{
+    border: none;
+    border-bottom: 1px solid grey;
+    display: flex;
+    margin-bottom: 30px; 
+}
+form>button{
+    border: none;
+    background-color: rgb(153, 146, 11);
+    padding: 4px 25px 4px 25px;
+    color: white;
+}
+.col-4{
+    border-left: 1px solid rgb(233, 232, 232);
+    padding: 40px 20px 0px 30px;
+}
+#div1{
+    background-color: blanchedalmond;
+    border-radius: 30px 30px 0 0 ;
+    padding: 10px 10px 5px 30px ;
+}
+#div1>p{
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 3px;
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(110, 25, 25);
+
+}
+ul{
+    color: brown;
+    list-style-type: square;
+}
+ul>li>a{
+    color: brown;
+}
+#div2{
+    padding: 10px 30px 0px 30px;
+}
+#p3{
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(110, 25, 25);
+    letter-spacing: 3px;
+    font-family:'Times New Roman', Times, serif;
+}
+#div2>img{
+    width: 150px;
+    margin-left: -12px;
+    border: 1px solid rgb(224, 223, 223);
+    margin-right: 10px;
+    padding: 10px;
+}
+#div2>p{
+    text-align: justify;
+}
+.footer{
+    height: 50px;
+    width: 1138px;
+    
+  
+    margin-left: -15px;
+}
+#div3{
+    background-image: url('../images/footer.jpg');
+    height:12px;
+    background-size: 17%;
+}
+#img1{
+    width: 40px;
+    height: 26px;
+    position: relative;
+    top:-13px;
+}
+#img2{
+    width: 55px;
+    height: 26px;
+    position: relative;
+    left: -1084px;
+    top: 14px;
+}
+#img3{
+    width: 80px;
+    height: 28px;
+    position: relative;
+    left: 1015px;
+    top: -12px;
+}
+#img4{
+    width: 89px;
+    height: 25px;
+    position: relative;
+    left:56px ;
+    top: 13px;
+}
+.footer>div>p{
+    position: relative;
+    top: -28px;
+    text-align: center;
+    letter-spacing: 1px;
+    word-spacing: 4px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
