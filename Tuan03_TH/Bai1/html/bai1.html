@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sky World</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+        #tong{
+            width: 1000px;
+            height: 600px;
+            background-color: rgb(104, 197, 255);
+            border: 1px solid black;
+        }
+        nav{
+            width: 100%;
+            height: 50px;
+            border-bottom:4px dotted white;
+            padding-top: 15px;
+            padding-right: 20px;
+        }
+        nav>h1{
+            float: right;
+            color: white;
+            margin-top: -5px;
+            font-family:Arial, Helvetica, sans-serif;
+           
+            text-shadow: 2px 1px 3px rgb(17, 17, 225);
+        }
+        nav>a{
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            padding: 20px;
+           
+        }
+        section{
+            width: 50%;
+            height: 470px;
+            float: left;
+            padding-left: 5px;
+            padding-right: 25px;
+            padding-top: 30px;
+        }
+        section>h1,section>p{
+            color: white;
+        }
+        aside{
+            width: 50%;
+            height: 470px;
+            float: left;
+            padding-top: 35px;
+
+        }
+        footer{
+            width: 100%;
+            height: 75px;
+            border-top: 4px dotted white;
+            float: left;
+            color: white;
+            padding-top: 25px;
+            text-align: center;
+        }
+        input,textarea{
+            border-radius: 7px ;
+            color: rgb(193, 194, 194);
+        }
+        .input1{
+            border: 2px dashed black;
+        }
+        table{
+            width: 495px;
+        }
+        .td1{
+            width: 160px;
+            color: white;
+        }
+        #input2{
+            color: black;
+        }
+        #div1{
+            padding-left: 50px;
+        }
+        aside>h1{
+            margin-top: 20px;
+            margin-left: 35px;
+            color: blue;
+            text-shadow: 2px 2px 0px blue;
+        }
+        aside>h3{
+            color: blue;
+            margin-left: 45px;
+        }
+    </style>
+</head>
+<body>
+    <div id="tong">
+        <nav>
+            <h1>Sky World</h1>
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="#">Services</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+        <section>
+            <h1>Registration information</h1><br>
+            <p>Start your travel planning right now with our on-line tour regstration
+                form. Just tell us a little about yourself and your group and one of our travel
+                experts will contact  you  to create the perfect tour package custom built for your group's needs</p>
+                <div id="div1">
+                    <table>
+                        <tr>
+                            <td class="td1">Title</td>
+                            <td>
+                                <form action="">
+                                    <lable for=""></lable>
+                                    <input id="input2" list="list"name="txtten" id="txtten" size="3" value="Mr." >
+                                    <datalist id="list">
+                                        <option value =Mr.>
+                                    </datalist>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td1">Full Name *</td>
+                            <td>
+                                <form action="">
+                                    <lable for=""></lable>
+                                    <input type="text"name="txtten" id="txtten" size="29" value="First Name">
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td1">Mailing Address</td>
+                            <td>
+                                <form action="">
+                                    <lable for=""></lable>
+                                    <input type="text"name="txtten" id="txtten" size="29" value="Mailing Address">
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td1">City</td>
+                            <td>
+                                <form action="">
+                                    <lable for=""></lable>
+                                    <input type="text"name="txtten" id="txtten" size="29" value="City">
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td1">Country</td>
+                            <td>
+                                <form action="">
+                                    <lable for=""></lable>
+                                    <input type="text"name="txtten" id="txtten" size="29" value="Country">
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td1">Specific questions or requests about your tour</td>
+                            <td>
+                                <textarea name="" id="" cols="29" rows="6">Specific questions or  requests about your tour </textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td1"></td>
+                            <td>
+                               <form>
+                                <input  class="input1" type="submit" value="Submit">
+                                <input class="input1" type="reset" value="Reset">
+                               </form>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+        </section>
+        <aside>
+            <img src="..//images/sky.png" alt="img" width="450px" height="305px">
+            <h1>You've arrived.</h1>
+            <h3>Journeys as great as the destinations.</h3>
+            
+        </aside>
+        <footer>
+            <p><b>&#169;2016 Sky World Tours. All rights reserved.</b></p>
+            <p>Contact information: <b><i>Student Name</i></b> | <b><i>StudentID</i></b> | Testing Date: <b><i>16 Sept 2016</i></b> </p>
+        </footer>
+    </div>
+    
+</body>
+</html>
