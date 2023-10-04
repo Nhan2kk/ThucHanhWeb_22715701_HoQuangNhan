@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    
+    <style>
+        .container-fluid{
+            background-image: url(../images/hero-bg.jpg);
+            background-size: 100%;
+            height: 760px;
+        }
+        .col-sm-3{
+            padding-left: 250px;
+        }
+        .col-sm-5{
+            padding-left: 150px;
+        }
+        .col-sm-5>a{
+            padding-left: 35px;
+            color: white;
+            text-decoration: none;
+        }
+        .col-sm-5>a:hover{
+            color:rgb(139, 139, 8) ;
+        }
+        #div2>a{
+            color: white;
+            text-decoration: none;
+        }
+        #img1{
+            
+            height: 20px;
+            margin-left: 90px;
+            width: 20px;
+        }
+        #img2{
+            width: 25px;
+            height: 22px;
+           
+            margin-left: 7px;
+        }
+        #img3{
+            width: 22px;
+            height: 21px;
+            margin-left: 7px;
+            margin-right: 10px;
+        }
+        .col-sm-4>a{
+            background-color: rgb(213, 164, 0);
+            color: white;
+            border-radius: 40px 40px 40px 40px;
+            padding: 5px;
+            padding-left: 20px;
+            text-decoration: none;
+            padding-right: 20px;
+        }
+        #col-sm-5{
+            padding-left: 250px;
+            margin-top: 210px;
+            color: white;
+        }
+        #col-sm-5>p{
+            padding-top: 10px;
+            font-size: 14px;
+        }
+        #odernow>button{
+            margin-left: 230px;
+            margin-top: 10px;
+            background-color: rgb(213, 164, 0);
+            border: none;
+            padding-left: 25px;
+            padding-right: 25px;
+            border-radius: 40px 40px 40px 40px;
+            font-size: 14px;
+        }
+        #odernow>form>input{
+            background-color: rgb(213, 164, 0);
+            color: white;
+            border-radius: 40px 40px 40px 40px;
+            padding: 5px;
+            padding-left: 30px;
+            text-decoration: none;
+            padding-right: 30px;
+            border: none;
+        }
+        .col-sm-3>a{
+            font-size: 90px;
+            margin-left: -10px;
+            text-decoration: none;
+            color: white;
+        }
+         .modal-footer>button{
+            border-radius:4px 4px 4px 4px ;
+            color:black ;
+            background-color: rgb(213, 164, 0);
+         }
+         #div1>input:hover{
+            border: 2px solid rgb(213, 164, 0);
+            
+         }
+         #div1>input{
+            border-radius: 20px 20px 20px 20px;
+            border: 1px solid rgb(213, 164, 0);
+
+         }
+         h4{
+            color: rgb(213, 164, 0);
+         }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row" style="padding-top: 26px;height: 80px;background-image: url(../images/hero-bg.jpg);background-size: 100%;">
+          <div class="col-sm-3" style="color:white;">
+            <p>Feane</p>
+          </div>
+          <div class="col-sm-5" style="color:white;">
+                <a href="../html/home.html" style="color:rgb(139, 139, 8)">HOME</a>
+                <a href="../html/menu.html">MENU</a>
+                <a href="#">ABOUT</a>
+                <a href="#">BOOK TABLE</a>
+            </div>          
+            <div class="col-sm-4" style="color:white;">
+                <img id="img1" src="..//images/taikhoan.jpg" alt="img" >
+                <img id="img2" src="../images/giohang.jpg" alt="img">
+                <img id="img3" src="../images/timkiem.jpg" alt="img">
+                <a href="#">Oder Online</a>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6" id="col-sm-5">
+                <h1>Fast Food Restaurant</h1>
+                <p>Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4" id="odernow">
+                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#order" >Order Now</button>
+                <div class="modal fade" id="order" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" >Order</h4>
+                                <button type="button" class="close" data-dismiss="modal"  >&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="/action_page.php">
+                                    <div class="mb-3 mt-3" id="div1">
+                                        <label for="telephone" class="form-label">Telephone</label>
+                                        <input type="tel" class="form-control" id="telephone"  name="telephone">
+                                    </div>
+                                    <div class="mb-3" id="div1">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email" name="email">
+                                    </div>
+                                    <div class="form-check mb-3">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox" name="remember"> Check me out
+                                        </label>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Order</button>
+                                <button type="submit" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <a style="padding-left: 5px;" href="#">.</a>
+                <a href="#">.</a>
+                <a style="color:rgb(213, 164, 0) ;font-size: 130px;" href="#">.</a>
+            </div>
+        </div>
+    </div>   
+</body>
+</html>
