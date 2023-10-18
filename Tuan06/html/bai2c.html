@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập JavaScript</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <p>Chọn loại cafe :</p>
+            <div>
+                <label><input type="checkbox" id="check1">Trung Nguyên</label><br>
+                <label><input type="checkbox" id="check2">Mê Kong</label><br>
+                <label><input type="checkbox" id="check3">New Life</label><br>
+                <label><input type="checkbox" id="check4">Ocean Blue</label><br>
+                <label><input type="checkbox" id="check5">Blue Space</label><br>
+                <label><input type="checkbox" id="check6">Windows</label><br>
+            </div>
+            <input type="button" value="Chọn" id="checkButton">
+            <p>Bạn chọn cafe : <span id="chon" style="color: red;"></span></p>
+        </div>
+    </div>
+    <script>
+        function buttonClick() {
+            let result = "";
+
+            if (check1.checked) {
+                result += "Trung Nguyên, ";
+            }
+            if (check2.checked) {
+                result += "Mê Kong, ";
+            }
+            if (check3.checked) {
+                result += "New Life, ";
+            }
+            if (check4.checked) {
+                result += "Ocean Blue, ";
+            }
+            if (check5.checked) {
+                result += "Blue Space, ";
+            }
+            if (check6.checked) {
+                result += "Windows, ";
+            }
+            document.getElementById("chon").innerText = result;
+        }
+
+        let check1 = document.getElementById('check1');
+        let check2 = document.getElementById('check2');
+        let check3 = document.getElementById('check3');
+        let check4 = document.getElementById('check4');
+        let check5 = document.getElementById('check5');
+        let check6 = document.getElementById('check6');
+
+        let checkButton = document.getElementById('checkButton');
+        checkButton.addEventListener('click', buttonClick);
+    </script>
+</body>
+
+</html>

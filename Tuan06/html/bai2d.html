@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập JavaScript</title>
+    <!-- Include jQuery and Bootstrap from CDN -->
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.min.js"></script>
+
+    <!-- Your existing script -->
+    <script>
+        $(document).ready(function(){
+            var initialBackgroundColor = $('td').css('background-color');
+            var initialFontColor = $('td').css('color');
+
+            $('input[type="button"]').click(function(){
+                var selectedValue = $('input[name="gioiTinh"]:checked').val();
+                var selectedColor = $('input[type="color"]').val();
+
+                if(selectedValue === "Background"){
+                    $('td').css('background-color', selectedColor);
+                } else if(selectedValue === "font") {
+                    $('td').css('color', selectedColor);
+                }
+            });
+            $('input[type="button"][value="Cancel"]').click(function(){
+                $('td').css('background-color', initialBackgroundColor);
+                $('td').css('color', initialFontColor);
+            });
+        });
+    </script>
+    <style>
+        td{
+            padding: 0 20px 0 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row" style="border: 1px solid grey;">
+            <table style="padding:10px ;">
+                <tr>
+                    <td colspan="2">
+                        <h4 style="text-align: center;">FORM ĐỊNH DẠNG</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Họ và tên</td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>Chọn</td>
+                    <td>
+                        <input type="radio" id="nam" name="gioiTinh" value="Background">
+                        <label for="nam">Background</label>
+                        <input type="radio" id="nu" name="gioiTinh" value="font">
+                        <label for="nu">font</label><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Chọn màu</td>
+                    <td>
+                        <input type="color"><br>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="button" value="Doi mau">
+                        <input type="button" value="Cancel">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><p>Ở sân trường được thầy cô và chúng em trồng nhiều cây và hoa khác nhau, chúng em cùng nhau chăm sóc cho cây và hoa mau lớn để trường em thêm đẹp. Em rất thích mỗi sáng thứ hai, được cùng các bạn chào cờ ở sân trường. Chúng em cùng lắng nghe lời thầy cô bảo ban hướng dẫn để thực hiện đúng nội quy của trường và học thật tốt.</p></td>
+                </tr>
+            </table>
+            
+        </div>
+    </div>
+</body>
+</html>

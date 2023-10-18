@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập JavaScript</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+
+    <script>
+        function kT(s, i, e) {
+            var m = document.getElementById(e);
+            //Kiểm tra số
+            if (isNaN(s)) {
+                m.innerText = "(*)";
+                m.style.display = "inline"; // Hiển thị 
+                document.getElementById(i).classList.add("is-invalid");
+                return false;
+            } else {
+                m.innerText = "";
+                m.style.display = "none"; // Ẩn 
+                document.getElementById(i).classList.remove("is-invalid");
+                return true;
+            }
+        }
+
+        function kTNhapSo(i, e) {
+            var v = document.getElementById(i).value;
+            kT(v, i, e);
+        }
+
+        function cong() {
+            var s1 = document.getElementById("st1").value;
+            var s2 = document.getElementById("st2").value;
+
+            if (kT(s1, "st1", "errSt1") && kT(s2, "st2", "errSt2"))
+            {
+                var kq = parseInt(s1) + parseInt(s2);
+                document.getElementById("KQ").innerText = kq;
+            }
+        }
+        function tru() {
+            var s1 = document.getElementById("st1").value;
+            var s2 = document.getElementById("st2").value;
+
+            if (kT(s1, "st1", "errSt1") && kT(s2, "st2", "errSt2"))
+            {
+                var kq = parseInt(s1) - parseInt(s2);
+                document.getElementById("KQ").innerText = kq;
+            }
+        }
+        function nhan() {
+            var s1 = document.getElementById("st1").value;
+            var s2 = document.getElementById("st2").value;
+
+            if (kT(s1, "st1", "errSt1") && kT(s2, "st2", "errSt2"))
+            {
+                var kq = parseInt(s1) * parseInt(s2);
+                document.getElementById("KQ").innerText = kq;
+            }
+        }
+        function chia() {
+            var s1 = document.getElementById("st1").value;
+            var s2 = document.getElementById("st2").value;
+
+            if (kT(s1, "st1", "errSt1") && kT(s2, "st2", "errSt2"))
+            {
+                var kq = parseInt(s1) / parseInt(s2);
+                document.getElementById("KQ").innerText = kq;
+            }
+        }
+        function chiadu() {
+            var s1 = document.getElementById("st1").value;
+            var s2 = document.getElementById("st2").value;
+
+            if (kT(s1, "st1", "errSt1") && kT(s2, "st2", "errSt2"))
+            {
+                var kq = parseInt(s1) % parseInt(s2);
+                document.getElementById("KQ").innerText = kq;
+            }
+        }
+    </script>
+
+    <style>
+       
+        .is-invalid {
+            border-color: rgb(249, 50, 50);
+            background-color: #e4bcbf;
+        }
+
+        .err-message {
+            color: #dc3545;
+            display: none;
+            font-style: italic;
+            margin-top: 0.25rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div style="width: 300px;border: 1px solid grey;padding: 0px 30px 20px 50px;">
+            <table >
+                <tr>
+                    <td></td>
+                    <td><h4>PHÉP TÍNH CƠ BẢN</h4></td>
+                </tr>
+                <tr>
+                    <td><label for="st1" >Nhập số thứ 1</label></td>
+                    <td>
+                        <input type="text" id="st1" class="form-control" required oninput="kTNhapSo('st1', 'errSt1')">
+                        <span id="errSt1" class="err-message"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="st2">Nhập số thứ 2</label></td>
+                    <td>
+                        <input type="text" id="st2" class="form-control" required oninput="kTNhapSo('st2', 'errSt2')">
+                        <span id="errSt2" class="err-message"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="button" class="btn btn-danger" onclick="cong()">Cộng </button>
+                        <button type="button" class="btn btn-danger" onclick="tru()">Trừ </button>
+                        <button type="button" class="btn btn-danger" onclick="nhan()">Nhân </button>
+                        <button type="button" class="btn btn-danger" onclick="chia()">Chia </button>
+                        <button type="button" class="btn btn-danger" onclick="chiadu()">Chia dư </button>
+                       
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="KQ">Kết quả </label></td>
+                    <td >
+                        <div id="KQ" style="border: 1px solid grey;height: 19px;width: 167px;">
+
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        </div>
+    </div>
+</body>
+
+</html>
