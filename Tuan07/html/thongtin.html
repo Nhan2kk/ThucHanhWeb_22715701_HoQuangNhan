@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.min.js"></script>
+    <title>Thông Tin Đăng Ký</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 style="text-align: center; color: rgb(71, 71, 189);">Register Infor</h2>
+        <table id="infoTable">
+            <tr>
+                <th>Họ và tên</th>
+                <th>Tên đăng nhập</th>
+                <th>Mật khẩu</th>
+                <th>Ngày sinh</th>
+                <th>Điện thoại</th>
+                <th>Địa chỉ</th>
+                <th>Email</th>
+                <th>Sở thích</th>
+            </tr>
+            <tr>
+                <td id="fullNames"></td>
+                <td id="users"></td>
+                <td id="passwords"></td>
+                <td id="dates"></td>
+                <td id="phones"></td>
+                <td id="addr"></td>
+                <td id="mail"></td>
+                <td id="hobbys"></td>
+                
+            </tr>
+        </table>
+    </div>
+    <script>
+        $(document).ready(function () {
+            var fullName = sessionStorage.getItem("name");
+            var user = sessionStorage.getItem("user");
+            var password = sessionStorage.getItem("pass");
+            var date = sessionStorage.getItem("bdate");
+            var phone = sessionStorage.getItem("tele");
+            var adr = sessionStorage.getItem("addr");
+            var hobby = sessionStorage.getItem("favor");
+            var email = sessionStorage.getItem("email");
+    
+            // Set text content for each ID
+            $("#fullNames").text(fullName);
+            $("#users").text(user);
+            $("#passwords").text(password);
+            $("#dates").text(date);
+            $("#phones").text(phone);
+            $("#addr").text(adr);
+            $("#mail").text(email);
+            $("#hobbys").text(hobby);
+        });
+    </script>
+    
+
+</body>
+
+</html>

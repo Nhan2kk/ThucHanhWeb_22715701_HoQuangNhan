@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.min.js"></script>
+    <title>Register Form</title>
+    <style>
+        .container {
+            border: 1px solid grey;
+            width: 800px;
+        }
+
+        table {
+            width: 100%;
+            border: 2px solid green;
+        }
+
+        .td {
+            border: 2px solid green;
+            color: rgb(71, 71, 189);
+            text-align: right;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p style="text-align: center;color: rgb(71, 71, 189);">Register Form</p>
+        <table>
+            <tr>
+                <td class="td">Họ và tên (*):</td>
+                <td class="td">
+                    <input id="fullName" class="form-control" type="text" required>
+                </td>
+            </tr>
+            <tr>
+                <td class="td">Tên đăng nhập (*):</td>
+                <td class="td">
+                    <input id="username" class="form-control" type="text" minlength="6" required>
+                </td>
+            </tr>
+            <tr>
+                <td class="td">Mật khẩu (*):</td>
+                <td class="td">
+                    <input id="password" class="form-control" type="password" required>
+                </td>
+            </tr>
+            <tr>
+                <td class="td">Xác nhận mật khẩu (*):</td>
+                <td class="td">
+                    <input id="confirmPassword" class="form-control" type="password" required>
+                </td>
+            </tr>
+            <tr>
+                <td class="td">Ngày sinh:</td>
+                <td class="td">
+                    <input id="dob" class="form-control" type="date">
+                </td>
+            </tr>
+            <tr>
+                <td class="td">Điện thoại:</td>
+                <td class="td">
+                    <input id="phone" class="form-control" type="tel" pattern="[0-9]+" required>
+                </td>
+            </tr>
+            <tr>
+                <td class="td">Địa chỉ:</td>
+                <td class="td">
+                    <input id="address" class="form-control" type="text">
+                </td>
+            </tr>
+            <tr>
+                <td class="td">Email khác:</td>
+                <td class="td">
+                    <input id="email" class="form-control" type="email" required>
+                </td>
+            </tr>
+            <tr>
+                <td class="td">Sở thích:</td>
+                <td class="td">
+                    <select id="hobby" class="form-control">
+                        <option value="Ca hat">Ca hát</option>
+                        <option value="Nhay">Nhảy</option>
+                        <option value="Doc sach">Đọc sách</option>
+                        <option value="Nghe nhac">Nghe nhạc</option>
+                        <option value="Kham pha">Khám phá</option>
+                        <option value="Du lich">Du lịch</option>
+                        <option value="Nau an">Nấu ăn</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="td"></td>
+                <td class="td" style="text-align: left;">
+                    <button id="dk" type="submit">Đăng ký</button>
+                    <button id="huy" type="reset">Hủy</button>
+                </td>
+            </tr>
+        </table>
+
+        <!-- Error Messages -->
+        <div id="errorMessages">
+            <p id="names" class="error"></p>
+            <p id="users" class="error"></p>
+            <p id="passes" class="error"></p>
+            <p id="apasses" class="error"></p>
+            <p id="teles" class="error"></p>
+            <p id="emails" class="error"></p>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#dk").click(function (event) {
+                event.preventDefault();
+
+                var fullName = $("#fullName").val();
+                var userName = $("#username").val();
+                var password = $("#password").val();
+                var date = $("#dob").val();
+                var confirmPassword = $("#confirmPassword").val();
+                var phone = $("#phone").val();
+                var adr = $("#address").val();
+                var hobby = $("#hobby").val();
+                var email = $("#email").val();
+
+                var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+                $(".error").text("");
+
+                var valid = true;
+
+                if (!fullName) {
+                    $("#fullNames").text("Vui lòng nhập tên.");
+                    $("#fullName").focus();
+                    valid = false;
+                }
+                if (userName.length < 6) {
+                    $("#users").text("Tên đăng nhập ít nhất phải có 6 ký tự.");
+                    $("#username").focus();
+                    valid = false;
+                }
+                if (!password) {
+                    $("#passes").text("Vui lòng nhập mật khẩu.");
+                    $("#password").focus();
+                    valid = false;
+                }
+                if (password !== confirmPassword) {
+                    $("#passwords").text("Mật khẩu xác nhận không khớp.");
+                    $("#confirmPassword").focus();
+                    valid = false;
+                }
+                if (phone && isNaN(phone)) {
+                    $("#phones").text("Điện thoại phải là số.");
+                    $("#phone").focus();
+                    valid = false;
+                }
+                if (email && !emailPattern.test(email)) {
+                    $("#mail").text("Email không hợp lệ.");
+                    $("#email").focus();
+                    valid = false;
+                }
+                if (valid) {
+                    sessionStorage.setItem("fullName", fullName);
+                    sessionStorage.setItem("user", userName);
+                    sessionStorage.setItem("password", password);
+                    sessionStorage.setItem("date", date);
+                    sessionStorage.setItem("phone", phone);
+                    sessionStorage.setItem("adr", adr);
+                    sessionStorage.setItem("hobby", hobby);
+                    sessionStorage.setItem("email", email);
+
+                    // Redirect to thongtin.html
+                    window.location.href = "thongtin.html";
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

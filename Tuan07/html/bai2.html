@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.min.js"></script>
+    <title>Car</title>
+    <style>
+        .container {
+            border: 1px solid rgb(209, 206, 206);
+        }
+
+        .table1 {
+            width: 284px;
+            text-align: center;
+            font-weight: bold;
+            color: blue;
+        }
+        .td1{
+            border: 3px solid rgb(216, 213, 213);
+        }
+        .td2{
+            border: 3px solid white;
+        }
+        .table2{
+            border: 3px solid rgb(230, 23, 23);
+            font-weight: bold;
+            width: 474px;
+        }
+        .table3{
+            width: 360px;
+            text-align: center;
+            font-weight: bold;
+            color: blue;
+        }
+      
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <img src="../images/banner_car.jpg" alt="bg" style="width: 100%;">
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <table class="table1">
+                    <tr>
+                        <td class="td1" colspan="2">Bảng tin thị trường</td>
+                    </tr>
+                    <tr>
+                        <td class="td1" colspan="2"> Vàng</td>
+                    </tr>
+                    <tr>
+                        <td class="td1">Mua vào</td>
+                        <td class="td1">Bán ra</td>
+                    </tr>
+                    <tr>
+                        <td class="td1" id="goldBuy">n</td>
+                        <td class="td1" id="goldSell">n</td>
+                    </tr>
+                    <tr>
+                        <td class="td1" colspan="2">USD</td>
+                    </tr>
+                    <tr>
+                        <td class="td1">Mua vào</td>
+                        <td class="td1">Bán ra</td>
+                    </tr>
+                    <tr>
+                        <td class="td1" id="usdBuy">n</td>
+                        <td class="td1" id="usdSell">n</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-5">
+                <table class="table2" style="text-align: left;color: black;background-color: rgb(213, 211, 211);border: 3px solid white;">
+                    <tr>
+                        <td class="td2" colspan="2" style="text-align:center;color: blue;">Cập nhật giá cả thị trường</td>
+                    </tr>
+                    <tr>
+                        <td class="td2">Mua vào</td>
+                        <td class="td2"> <input type="text" id="buySellInput" class="form-control" onkeyup="handleInput()" ></td>
+                    </tr>
+                    <tr>
+                        <td class="td2">Bán ra</td>
+                        <td class="td2"> <input type="text" id="buySellOutput" class="form-control" onkeyup="handleOutput()"></td>
+                    </tr>
+                    <tr>
+                        <td class="td2">Loại xe</td>
+                        <td class="td2">
+                            <select id="carType" onchange="showCarDetails()" class="form-control">
+                                <option value="Toyota;../images/car1.jpg;35000">Toyota</option>
+                                <option value="KIA;../images/car2.jpg;15000">KIA</option>
+                                <option value="Ford;../images/car3.jpg;40000">Ford</option>
+                                <option value="Civic;../images/car4.jpg;32000">Civic</option>
+                                <option value="Ferrari;../images/car5.jpg;50000">Ferrari</option>
+                                <option value="Mercedes;../images/car7.jpg;45000">Mercedes</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td2"></td>
+                        <td class="td2">
+                            <input type="radio"  name="updateType" value="1"> Vàng
+                            <input type="radio" name="updateType" value="0"> USD
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td2"></td>
+                        <td class="td2">
+                            <button onclick="updateData()">Update</button>
+                            <button onclick="updateState()">State</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-4">
+                <table class="table3">
+                    <tr>
+                        <td class="td1"> Bảng báo giá</td>
+                    </tr>
+                    <tr>
+                        <td class="td1" id="carDetails"></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleInput() {
+            const inputField = document.getElementById('buySellInput');
+            const outputField = document.getElementById('buySellOutput');
+            const updateButton = document.querySelector('button');
+
+            if (inputField.value.trim() !== '' && outputField.value.trim() !== '') {
+                updateButton.disabled = false;
+            } else {
+                updateButton.disabled = true;
+            }
+        }
+
+        function handleOutput() {
+            const inputField = document.getElementById('buySellInput');
+            const outputField = document.getElementById('buySellOutput');
+            const updateButton = document.querySelector('button');
+
+            if (inputField.value.trim() !== '' && outputField.value.trim() !== '') {
+                updateButton.disabled = false;
+            } else {
+                updateButton.disabled = true;
+            }
+        }
+
+        function showCarDetails() {
+            const carTypeSelect = document.getElementById('carType');
+            const carDetailsDiv = document.getElementById('carDetails');
+            const selectedOption = carTypeSelect.options[carTypeSelect.selectedIndex];
+            const details = selectedOption.value.split(';');
+
+            const imagePath = details[1];
+            const price = details[2];
+
+            carDetailsDiv.innerHTML = `<img src="${imagePath}" alt="${selectedOption.text}" style="width: 100px; height: 100px;">
+                                      <p>Price: ${price}</p>`;
+        }
+
+        function updateData() {
+            const radioButtons = document.getElementsByName('updateType');
+            const selectedRadio = Array.from(radioButtons).find(radio => radio.checked);
+
+            if (selectedRadio) {
+                const updateType = selectedRadio.value;
+                const buySellInput = document.getElementById('buySellInput');
+                const buySellOutput = document.getElementById('buySellOutput');
+                const carDetailsDiv = document.getElementById('carDetails');
+                const carDetails = carDetailsDiv.innerHTML;
+
+                if (updateType === '1') {
+                    document.getElementById('goldBuy').innerText = buySellInput.value;
+                    document.getElementById('goldSell').innerText = buySellOutput.value;
+                } else {
+                    document.getElementById('usdBuy').innerText = buySellInput.value;
+                    document.getElementById('usdSell').innerText = buySellOutput.value;
+                }
+            }
+        }
+
+        function updateState() {
+            alert('Updating State');
+        }
+    </script>
+
+</body>
+</html>
