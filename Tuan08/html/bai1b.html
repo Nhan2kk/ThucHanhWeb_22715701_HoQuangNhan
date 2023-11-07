@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <title>Document</title>
+    <style>
+      #head {
+        background-color: rgb(61, 61, 158);
+        height: 75px;
+        line-height: 20px;
+      }
+      #head div h1 {
+        margin-top: 25px;
+        color: white;
+      }
+      #section {
+        padding: 20px;
+      }
+      #section form input {
+        margin-bottom: 15px;
+        border-radius: 5px;
+      }
+      #section form button {
+        margin-bottom: 15px;
+        border-radius: 5px;
+        background-color: rgb(53, 153, 46);
+        padding: 0 50px 0 50px;
+        color: white;
+      }
+    </style>
+    <script>
+      function dangky() {
+        let ho = document.getElementById("ho").value;
+        let regexHo = /^[A-Z][a-z]{1,}$/;
+        let errHo = document.getElementById("errHo");
+        if (!regexHo.test(ho)) {
+          errHo.innerHTML = "(Họ không hợp lệ)";
+          return false;
+        }
+        errHo.innerHTML = "(*)";
+
+        let ten = document.getElementById("ten").value;
+        let regexten = /^[A-Z][a-z]{1,}$/;
+        let errten = document.getElementById("errten");
+        if (!regexten.test(ten)) {
+          errten.innerHTML = "(Tên không hợp lệ)";
+          return false;
+        }
+        errten.innerHTML = "(*)";
+
+        let mail = document.getElementById("mail").value;
+        let regexMail = /^[A-Za-z0-9]{1,}\@gmail\.com$/;
+        let errmail = document.getElementById("errmail");
+        if (mail.trim() == "" && !regexMail.test(mail)) {
+          errmail.innerHTML = "(không đúng định dạng)";
+          return false;
+        }
+        errmail.innerHTML = "(*)";
+
+        let agmail = document.getElementById("agmail").value;
+        let erragmail = document.getElementById("erragmail");
+
+        if (agmail != mail) {
+          erragmail.innerHTML = "(không trùng khớp)";
+          return false;
+        }
+        erragmail.innerHTML = "(*)";
+        let pw = document.getElementById("pw").value;
+        let regexpw = /^[A-Za-z]{1,}[0-9]{1,}$/;
+        let errpw = document.getElementById("errpw");
+        if (!regexpw.test(pw)) {
+          errpw.innerHTML = "(ít nhất 6 kí tự gồm chữ và số)";
+          return false;
+        }
+        errpw.innerHTML = "(*)";
+        let namsinh = document.getElementById("birth").value;
+        let errbirth = document.getElementById("errbirth");
+
+        if (namsinh.trim() == "" || parseInt(namsinh) >= 2002) {
+          errbirth.innerHTML = "(bắt buộc và nhỏ hơn 2002)";
+          return false;
+        }
+        errbirth.innerHTML = "(*)";
+        alert("Đăng ký thành công!");
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="head">
+        <div class="col-sm-7">
+          <h1>facebook</h1>
+        </div>
+        <div class="col-sm-2">
+          <form action="">
+            <label for="mailorsdt" style="color: white; font-size: 14px"
+              >Email hoặc điện thoại</label
+            >
+            <input type="text" id="mailorsdt" size="17" style="height: 20px" />
+            <input type="checkbox" />
+            <label for="" style="color: rgb(192, 183, 183); font-size: 13px"
+              >Duy trì đăng nhập</label
+            >
+          </form>
+        </div>
+        <div class="col-sm-2">
+          <form action="">
+            <label for="mk" style="color: white; font-size: 14px"
+              >Mật khẩu</label
+            >
+            <input type="text" id="mk" size="17" style="height: 20px" />
+
+            <a href="#" style="color: rgb(192, 183, 183); font-size: 13px"
+              >Quên mật khẩu ?</a
+            >
+          </form>
+        </div>
+        <div class="col-sm-1">
+          <button
+            type="submit"
+            style="
+              font-size: 13px;
+              height: 20px;
+              width: 83px;
+              margin: 29px 0px 0px -10px;
+              background-color: rgb(104, 131, 166);
+              color: rgb(231, 231, 231);
+            "
+          >
+            <b><p style="margin-top: -4px">Đăng nhập</p></b>
+          </button>
+        </div>
+      </div>
+      <div class="row" style="background-color: rgb(231, 231, 249)">
+        <div class="col-sm-5">
+          <img src="../img/bg.jpg" alt="" width="370px" />
+        </div>
+        <div class="col-sm-7" id="section">
+          <h1>Đăng ký</h1>
+          <br />
+          <p><b> Miễn phí và sẽ luôn như vậy</b></p>
+          <form action="">
+            <input type="text" id="ho" placeholder="Họ" />
+            <input type="text" id="ten" placeholder="Tên" />
+            <span id="errHo" class="text-danger font-italic"></span>
+            <span id="errten" class="text-danger font-italic"></span>
+            <input
+              type="text"
+              id="mail"
+              placeholder="Email đăng nhập"
+              size="46"
+            />
+            <span id="errmail" class="text-danger font-italic"></span>
+            <br />
+            <input
+              type="text"
+              id="agmail"
+              placeholder="Nhập lại Email"
+              size="46"
+            />
+            <span id="erragmail" class="text-danger font-italic"></span> <br />
+            <input type="password" id="pw" placeholder="Mật khẩu" size="46" />
+            <span id="errpw" class="text-danger font-italic"></span><br />
+            <input type="text" id="birth" placeholder="Năm sinh" size="46" />
+            <span id="errbirth" class="text-danger font-italic"></span> <br />
+            <button type="button" onclick="dangky()">Đăng ký</button>
+          </form>
+        </div>
+      </div>
+      <div class="row" style="background-color: rgb(231, 231, 249)">
+        <div class="col-sm-12">
+          <p><b>Chúng tôi mong sớm gặp lại bạn.</b></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
