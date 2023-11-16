@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/dangky.js"></script>
+    <title>Học kỳ quân đội hè 2022</title>
+    <style>
+      a {
+        padding: 15px;
+      }
+      table {
+        height: 100%;
+      }
+      table tr th {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" style="border: 1px solid black">
+      <div
+        class="row"
+        style="
+          height: 250px;
+          background-image: url(../images/website.png);
+          border-bottom: 1px solid black;
+        "
+      ></div>
+      <div class="row">
+        <a href="../html/index.html">Trang chủ</a>
+        <a href="#" onclick="$('#dangky').modal('show')">Đăng ký</a>
+        <div
+          class="modal fade justify-content-center"
+          id="dangky"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h6 style="padding-left: 300px">THÔNG TIN HỌC VIÊN</h6>
+                <br />
+                <button type="button" class="close" data-dismiss="modal">
+                  &times;
+                </button>
+              </div>
+              <div class="modal-body">
+                <table style="width: 100%">
+                  <tr>
+                    <th><label for="hoten"></label>Họ và tên</th>
+                    <td>
+                      <input type="text" id="hoten" class="form-control" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td height="30px">
+                      <span
+                        id="errten"
+                        style="color: red; font-style: italic"
+                      ></span>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <th>
+                      <label for="">Số điện thoại</label>
+                    </th>
+                    <td>
+                      <input type="tel" id="sdt" class="form-control" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td height="30px">
+                      <span
+                        id="errsdt"
+                        style="color: red; font-style: italic"
+                      ></span>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <th>
+                      <label for="date">Ngày sinh</label>
+                    </th>
+                    <td>
+                      <input type="date" id="date" class="form-control" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td height="30px">
+                      <span
+                        id="errdate"
+                        style="color: red; font-style: italic"
+                      ></span>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <th>
+                      <label for="addr">Địa chỉ</label>
+                    </th>
+                    <td>
+                      <input type="text" id="addr" class="form-control" />
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <th style="width: 230px">
+                      <label for="kkhoa">Bạn muốn tham gia khóa nào ?</label>
+                    </th>
+                    <td>
+                      <select id="khoa" class="form-control">
+                        <option value="Khóa 2 tuần">Khóa 2 tuần</option>
+                        <option value="Khóa 4 tuần">Khóa 4 tuần</option>
+                        <option value="Khóa 6 tuần">Khóa 6 tuần</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>
+                      <label for="hp">Học phí</label>
+                    </th>
+                    <td>
+                      <input
+                        type="text"
+                        id="hp"
+                        class="form-control"
+                        disabled
+                      />
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <th>
+                      <label for="avt">Ảnh đại diện</label>
+                    </th>
+                    <td>
+                      <input type="file" id="avt" class="form-control" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td height="30px">
+                      <span
+                        id="erravt"
+                        style="color: red; font-style: italic"
+                      ></span>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="form-control" onclick="dangky()">
+                  Lưu
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <h6>LIST OF MEMBERS</h6>
+      </div>
+      <div class="row">
+        <table class="table table-hover table-striped">
+          <thead>
+            <tr>
+              <th>STT</th>
+              <th>Họ tên</th>
+              <th>Số điện thoại</th>
+              <th>Ngày sinh</th>
+              <th>Địa chỉ</th>
+              <th>Khóa học</th>
+              <th>Học phí</th>
+            </tr>
+          </thead>
+          <tbody id="xuat"></tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
